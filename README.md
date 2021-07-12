@@ -35,19 +35,29 @@ Dockerfile template
 </div>
 
 <h3>Kubernetes / GKE</h3>
+    kubectl get pods
+    kubectl apply -f file.yaml
+    kubectl port-forward <pod_name> <port:port>
 
 <h3>Terraform</h3>
 
-    wget https://releases.hashicorp.com/terraform/0.13.0/terraform_0.13.0_linux_amd64.zip
+    wget https://releases.hashicorp.com/terraform/1.0.2/terraform_1.0.2_linux_amd64.zip
     unzip terraform_0.13.0_linux_amd64.zip 
     sudo mv terraform /usr/local/bin/
     terraform -v
     
     terraform init
+    terraform validate
     terraform plan
     terraform apply
     terraform destroy
     
+<h3>Ansible</h3>
+
+    python -m pip install --user ansible
+    pip install requests google-auth
+    
+
 
 <h3>Google Cloud Shell / SDK</h3>
 GOOGLE_CLOUD_PROJECT is a present environmental variable containing project ID
@@ -60,6 +70,12 @@ GOOGLE_CLOUD_PROJECT is a present environmental variable containing project ID
     export PROJECT_ID=$(gcloud config get-value project)    #set project ID as an environment variable 
     gcloud iam service-accounts list
     gcloud iam service-accounts keys create key.json --iam-account=<email_acct>
+    
+    gcloud container clusters get-credentials <cluster_name> --zone=<zone>
+
+    
+    gcloud container clusters create 
+    
 
 
     
