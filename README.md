@@ -1,6 +1,6 @@
 # devops-cheatsheet
 
-commonly used commands / CLI tricks for some of the more popular devops tools
+Commonly used commands / CLI tricks for some of the more popular devops tools. Work in progress.
 
 <h3>Git</h3>
 
@@ -35,6 +35,7 @@ Dockerfile template
 </div>
 
 <h3>Kubernetes / GKE</h3>
+
     kubectl get pods
     kubectl apply -f file.yaml
     kubectl port-forward <pod_name> <port:port>
@@ -58,7 +59,6 @@ Dockerfile template
     pip install requests google-auth
     
 
-
 <h3>Google Cloud Shell / SDK</h3>
 GOOGLE_CLOUD_PROJECT is a present environmental variable containing project ID
     
@@ -70,10 +70,7 @@ GOOGLE_CLOUD_PROJECT is a present environmental variable containing project ID
     export PROJECT_ID=$(gcloud config get-value project)    #set project ID as an environment variable 
     gcloud iam service-accounts list
     gcloud iam service-accounts keys create key.json --iam-account=<email_acct>
-    
     gcloud container clusters get-credentials <cluster_name> --zone=<zone>
-
-    
     gcloud container clusters create 
     
 
