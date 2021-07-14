@@ -46,7 +46,6 @@ Dockerfile template
     unzip terraform_0.13.0_linux_amd64.zip 
     sudo mv terraform /usr/local/bin/
     terraform -v
-    
     terraform init
     terraform validate
     terraform plan
@@ -64,16 +63,20 @@ GOOGLE_CLOUD_PROJECT is a present environmental variable containing project ID
     
     gcloud config set project <project>
     gcloud config list
+    gcloud iam service-accounts create <name> --display-name <display_name>
     gcloud iam service-accounts list 
-    gcloud iam service-accounts keys create key.json --iam-account <email_address>
+    gcloud iam service-accounts keys create ./key.json --iam-account <email_address>
+    gcloud projects add-iam-policy-binding <project_id> --member=serviceAccount:<service_account_email> --role=roles/owner
     ssh-keygen -t rsa -b 1024 -N '' -f ~/.ssh/ssh_key
     export PROJECT_ID=$(gcloud config get-value project)    #set project ID as an environment variable 
     gcloud iam service-accounts list
     gcloud iam service-accounts keys create key.json --iam-account=<email_acct>
     gcloud container clusters get-credentials <cluster_name> --zone=<zone>
     gcloud container clusters create 
+    gcloud compute ssh <server_name> --zone <zone>
     
-
+    
+    gsutil mb gs://<project_id>-name
 
     
 
