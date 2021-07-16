@@ -3,6 +3,9 @@
 Commonly used commands / CLI tricks for some of the more popular devops tools. Work in progress.
 
 <h3>Git</h3>
+    git commit -m <message>
+    git revert <name_of_bad_commit>
+    git diff-tree -r {hash}     #list files changed by particular commit. adding --no-commit-id will supress commit hashes, and --name-only will not print filepaths
 
 <h3>Docker</h3>
 
@@ -36,9 +39,16 @@ Dockerfile template
 
 <h3>Kubernetes / GKE</h3>
 
-    kubectl get pods
+    kubectl get pods -o wide    #without the namspaces tag this only fetches for the default namespace
     kubectl apply -f file.yaml
     kubectl port-forward <pod_name> <port:port>
+    kubectl create namespace 
+    kubectl get pods --namespace=<namespace>
+    kubectl drain <node_name> --ignore-daemonsets
+    kubectl uncordon <node_name>
+    
+    kubeadm init --pod-network-cidr=192.168.0.0/16
+    kubeadm token create --print-join-command
 
 <h3>Terraform</h3>
 
